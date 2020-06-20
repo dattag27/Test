@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[[[ChromeDriver: chrome on WINDOWS (1b9c025789eae1395c6fe74de212fade)] -> id: email] loaded properly]]>
+    </line>
+    <line>
+      <![CDATA[STEP2]]>
+    </line>
+    <line>
+      <![CDATA[STEP3]]>
+    </line>
+    <line>
+      <![CDATA[STEP4]]>
+    </line>
+  </reporter-output>
+  <suite name="Test" duration-ms="34510" started-at="2020-06-20T12:40:55Z" finished-at="2020-06-20T12:41:30Z">
+    <groups>
+    </groups>
+    <test name="FBTEst" duration-ms="34510" started-at="2020-06-20T12:40:55Z" finished-at="2020-06-20T12:41:30Z">
+      <class name="Tests.TestFile">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.TestFile@13fee20c]" name="setup" is-config="true" duration-ms="557" started-at="2020-06-20T18:10:55Z" finished-at="2020-06-20T18:10:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="start(java.lang.String, java.lang.String)[pri:0, instance:Tests.TestFile@13fee20c]" name="start" is-config="true" duration-ms="15523" started-at="2020-06-20T18:10:55Z" finished-at="2020-06-20T18:11:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.facebook.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="FBTest()[pri:0, instance:Tests.TestFile@13fee20c]" name="FBTest" duration-ms="16567" started-at="2020-06-20T18:11:11Z" finished-at="2020-06-20T18:11:27Z">
+          <reporter-output>
+            <line>
+              <![CDATA[[[ChromeDriver: chrome on WINDOWS (1b9c025789eae1395c6fe74de212fade)] -> id: email] loaded properly]]>
+            </line>
+            <line>
+              <![CDATA[STEP2]]>
+            </line>
+            <line>
+              <![CDATA[STEP3]]>
+            </line>
+            <line>
+              <![CDATA[STEP4]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- FBTest -->
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.TestFile@13fee20c]" name="tearDownMethod" is-config="true" duration-ms="1330" started-at="2020-06-20T18:11:27Z" finished-at="2020-06-20T18:11:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=FBTest status=SUCCESS method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@13fee20c] output=[[ChromeDriver: chrome on WINDOWS (1b9c025789eae1395c6fe74de212fade)] -> id: email] loaded properly]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.TestFile@13fee20c]" name="teardown" is-config="true" duration-ms="1050" started-at="2020-06-20T18:11:29Z" finished-at="2020-06-20T18:11:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Tests.TestFile -->
+    </test> <!-- FBTEst -->
+  </suite> <!-- Test -->
+</testng-results>
