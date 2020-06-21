@@ -22,9 +22,12 @@ public class TestFile extends BaseScripts {
 			logger=report.createTest("FB Test");
 			
 			logger.info("Test Started");
+			
+			connect().homePage().launch();
 			connect().homePage().enterUserName();
 			connect().homePage().enterPassword();
 			connect().homePage().signIn();
+			 
 		}catch(Exception e)
 		{
 			e.printStackTrace();

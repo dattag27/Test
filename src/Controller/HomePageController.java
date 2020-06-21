@@ -1,5 +1,7 @@
 package Controller;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -20,6 +22,10 @@ public class HomePageController extends ComponentFunctions {
 		home =PageFactory.initElements(driver, HomePage.class);		
 	}
 
+	public void launch() throws IOException, Exception
+	{
+		launchURL(getValue("URL"));
+	}
 	public void enterUserName() throws Exception
 	{
 		waitTillElementEnabled(home.username,"UserName",10);

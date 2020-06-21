@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -20,9 +21,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.internal.Locatable;
+import org.openqa.selenium.remote.server.handler.CaptureScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
 import org.testng.annotations.Listeners;
 
 import atu.testng.reports.ATUReports;
@@ -42,11 +43,6 @@ public class ComponentFunctions{
 	
 	
 	
-	
-	
-	
-	
-	
 public static final String EXCELFILELOCATION="./Inputsheets/Data.xlsx";
 	
 	private static FileInputStream fis;
@@ -58,6 +54,7 @@ public static final String EXCELFILELOCATION="./Inputsheets/Data.xlsx";
 		
 		this.driver = objTempWebDriver;
 		this.objJSExecutor = (JavascriptExecutor) this.driver;
+		BaseScripts.log = Logger.getLogger(ComponentFunctions.class);
 	
 		
 		}
@@ -115,6 +112,23 @@ public static final String EXCELFILELOCATION="./Inputsheets/Data.xlsx";
 		
 	}
 
+	public Boolean launchURL(String strURL) throws Exception {
+		try {
+			this.driver.get(strURL);
+			ATUReports.add(strURL +" launched in Browser!!! " , LogAs.PASSED,new CaptureScreen(ScreenshotOf.BROWSER_PAGE));
+			BaseScripts.logTestPass(strURL);
+			logToConsole(strURL +" launched in Browser!!! ");
+			return true;
+		} catch (Exception var3) {
+			this.strErrorMsg = var3.getMessage();
+			ATUReports.add(
+					"Unable to launch URL=>" + strURL + " in browser.<BR>Error message=>" + this.strErrorMsg, "true",
+					"false",LogAs.FAILED,(new CaptureScreen(ScreenshotOf.BROWSER_PAGE)));
+			logToConsole("Exception Unable to launch the Browser!!! ");
+			return false;
+		}
+	}
+
 public Boolean typeValue(WebElement objWebElement, String strObjectName, String strInputValue) throws Exception
 {
 	try {
@@ -122,11 +136,13 @@ public Boolean typeValue(WebElement objWebElement, String strObjectName, String 
 		String strObjectXPATH = "";
 		ATUReports.add("Value " + strInputValue + " typed in element " + strObjectName, LogAs.PASSED,new CaptureScreen(ScreenshotOf.BROWSER_PAGE));
 		BaseScripts.logTestPass(strInputValue,strObjectName);
+		logToConsole("Value " + strInputValue + " typed in element " + strObjectName);
 		captureScreenshotOfElement(objWebElement, strObjectName, "Demo");
 		return true;
 	}catch(Exception e)
 	{
 		this.strErrorMsg = e.toString();
+		logToConsole("Unable to type Value " + strInputValue + " in element " + strObjectName + this.strErrorMsg);
 		ATUReports.add("Unable to type Value " + strInputValue + " in element " + strObjectName, "true","false", LogAs.FAILED, new CaptureScreen(ScreenshotOf.BROWSER_PAGE));
 		BaseScripts.logTestFail(strInputValue,strObjectName);
 		return false;
@@ -139,6 +155,7 @@ public Boolean clickObject(WebElement objWebElement, String strObjectName) throw
 	try {
 		objWebElement.click();
 		String strObjectXPATH = "";
+		logToConsole("Element " + strObjectName + "</i> clicked");
 		ATUReports.add("Element " + strObjectName + "</i> clicked",LogAs.PASSED,new CaptureScreen(ScreenshotOf.DESKTOP));
 		BaseScripts.logTestPass(strObjectName );
 		return true;
@@ -146,6 +163,7 @@ public Boolean clickObject(WebElement objWebElement, String strObjectName) throw
 		this.strErrorMsg = e.toString();
 		ATUReports.add(
 				strObjectName + " couldn't be clicked. <br> Error message=>" + this.strErrorMsg,LogAs.FAILED,new CaptureScreen(ScreenshotOf.BROWSER_PAGE));
+		logToConsole(strObjectName + " couldn't be clicked. <br> Error message=>"+ this.strErrorMsg);
 		BaseScripts.logTestFail(strObjectName + "not clicked");
 		return false;
 	}
@@ -155,17 +173,23 @@ public Boolean waitTillElementEnabled(WebElement objWebElement, String strObject
 	try {
 		(new WebDriverWait(this.driver, (long) intWaitTime))
 				.until(ExpectedConditions.elementToBeClickable(objWebElement));
-		Reporter.log(objWebElement+ " loaded properly");
+		logToConsole(objWebElement+ " loaded properly");
 		BaseScripts.logTestPass(strObjectName+ " Loaded properly");
+		
 		return true;
 	} catch (Exception var5) {
 		this.strErrorMsg = var5.toString();
-		Reporter.log(objWebElement+ "not loaded properly");
+		logToConsole(objWebElement+ "not loaded properly");
 		BaseScripts.logTestFail(strObjectName+ "Not Loaded properly");
 		return false;
 	}
 	
 	
+}
+
+public void logToConsole(String message)
+{
+		BaseScripts.log.info(message);
 }
 public boolean captureScreenshotOfElement(WebElement objWebElement, String strObjectName, String strFilePath)
 		throws IOException {

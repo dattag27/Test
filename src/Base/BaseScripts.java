@@ -9,16 +9,20 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -35,6 +39,7 @@ public class BaseScripts {
 	public String strDTParametersNValues;
 	public ExtentReports report;
 	public static ExtentTest logger;
+	public static Logger log=null;
 	
 	
 	public BaseScripts() {
@@ -70,18 +75,32 @@ public class BaseScripts {
 		report.attachReporter(reporter);
 	}
 	
-	@Parameters({"Browser" , "url"})
+	@Parameters({"Browser"})
 	@BeforeClass
-	public void start(String Browser, String url) throws InterruptedException{
+	public void start(String Browser) throws InterruptedException{
 	String browser=Browser;
+	try{
 	if(browser.contains("chrome")){
+		System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 		System.setProperty("webdriver.chrome.driver","./Lib/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
+		Logger.getLogger(BaseScripts.class).info(Browser+"Launched successfully!!!");
 		driver.manage().window().maximize();
+		Logger.getLogger(BaseScripts.class).info("Window Maximized");
 		
 	}
-	driver.get(url);
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}catch(Exception e)
+	{
+		Logger.getLogger(BaseScripts.class).info("Exception in browser initialization!!! : " + e.getMessage());
+		System.out.println(e.toString());
+	}
+	}
+	@BeforeTest
+	public static void loadlog4j()
+	{
+		String log4j=System.getProperty("user.dir")+ "/Config/log4j.properties";
+		PropertyConfigurator.configure(log4j);
 	}
 	
 	@Test(enabled = false)
@@ -135,7 +154,6 @@ public class BaseScripts {
 			
 			FileHandler.copy(src,new File(screenshotPath));
 		
-			System.out.println("Screenshot Captured");
 		}catch (Exception e) {
 				System.err.println("Unable to take Screenshot" +e.getMessage());
 		}
@@ -166,4 +184,5 @@ public class BaseScripts {
 		CaptureScreenshot(driver);
 		logger.fail("Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(CaptureScreenshot(driver)).build());
 	}
+
 }

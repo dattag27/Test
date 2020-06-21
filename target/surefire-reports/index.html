@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Test">
-                    <span>E:\TestProject\NewFile.xml</span>
+                    <span>C:\Users\Gourave\workspace\TestProject\NewFile.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -135,14 +135,13 @@
         </div> <!-- panel Test -->
         <div panel-name="test-xml-Test" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\TestProject\NewFile.xml</span>
+            <span class="header-content">C:\Users\Gourave\workspace\TestProject\NewFile.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;0&quot; verbose=&quot;0&quot; name=&quot;Test&quot;&gt;
-  &lt;parameter name=&quot;url&quot; value=&quot;https://www.facebook.com&quot;/&gt;
   &lt;parameter name=&quot;Browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;atu.testng.reports.listeners.ATUReportsListener&quot;/&gt;
@@ -195,12 +194,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'FBTest')
 data.setCell(0, 2, 'Tests.TestFile')
-data.setCell(0, 3, 16567);
+data.setCell(0, 3, 20807);
 window.suiteTableData['Test']= { tableData: data, tableDiv: 'times-div-Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 20 seconds</span>
               <div id="times-div-Test">
               </div> <!-- times-div-Test -->
             </div> <!-- times-div -->
@@ -214,7 +213,7 @@ return data;
             <div class="reporter-method-div">
               <span class="reporter-method-name">FBTest</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (1b9c025789eae1395c6fe74de212fade)] -> id: email] loaded properly</span>
+                <span class="reporter-method-output">STEP1</span>
                 <span class="reporter-method-output">STEP2</span>
                 <span class="reporter-method-output">STEP3</span>
                 <span class="reporter-method-output">STEP4</span>
@@ -240,21 +239,25 @@ return data;
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">loadlog4j</span>
+                <span class="method-start">416 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-                <span class="method-name">start(chrome, https://www.facebook.com)</span>
-                <span class="method-start">567 ms</span>
+                <span class="method-name">start(chrome)</span>
+                <span class="method-start">463 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">FBTest</span>
-                <span class="method-start">16118 ms</span>
+                <span class="method-start">5220 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDownMethod([TestResult name=FBTest status=SUCCESS method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@13fee...)</span>
-                <span class="method-start">32686 ms</span>
+                <span class="method-name">tearDownMethod([TestResult name=FBTest status=SUCCESS method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@4e04a...)</span>
+                <span class="method-start">26028 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">34016 ms</span>
+                <span class="method-start">27952 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
