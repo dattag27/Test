@@ -48,12 +48,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Test">
-                    <span>E:\TestProject\NewFile.xml</span>
+                    <span>C:\Users\Gourave\workspace\TestProject\NewFile.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Test">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,6 +102,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Test" title="Tests.TestFile" hash-for-method="FBTest">FBTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test" title="Tests.FileUpload" hash-for-method="FileUploadTest">FileUploadTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Test -->
@@ -116,6 +121,21 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test" class="panel Test">
+          <div class="suite-Test-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Tests.FileUpload</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="FileUploadTest">
+                  </a> <!-- FileUploadTest -->
+                  <span class="method-name">FileUploadTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test-class-passed -->
           <div class="suite-Test-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -134,14 +154,13 @@
         </div> <!-- panel Test -->
         <div panel-name="test-xml-Test" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\TestProject\NewFile.xml</span>
+            <span class="header-content">C:\Users\Gourave\workspace\TestProject\NewFile.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;0&quot; verbose=&quot;3&quot; name=&quot;Test&quot;&gt;
-  &lt;parameter name=&quot;url&quot; value=&quot;https://www.facebook.com&quot;/&gt;
   &lt;parameter name=&quot;Browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;atu.testng.reports.listeners.ATUReportsListener&quot;/&gt;
@@ -153,6 +172,11 @@
       &lt;class name=&quot;Tests.TestFile&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- FBTEst --&gt;
+  &lt;test name=&quot;AutoIT&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;Tests.FileUpload&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- AutoIT --&gt;
 &lt;/suite&gt; &lt;!-- Test --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -165,6 +189,9 @@
             <ul>
               <li>
                 <span class="test-name">FBTEst (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">AutoIT (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -190,16 +217,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'FBTest')
-data.setCell(0, 2, 'Tests.TestFile')
-data.setCell(0, 3, 20151);
+data.setCell(0, 1, 'FileUploadTest')
+data.setCell(0, 2, 'Tests.FileUpload')
+data.setCell(0, 3, 9473);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'FBTest')
+data.setCell(1, 2, 'Tests.TestFile')
+data.setCell(1, 3, 18);
 window.suiteTableData['Test']= { tableData: data, tableDiv: 'times-div-Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 20 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Test">
               </div> <!-- times-div-Test -->
             </div> <!-- times-div -->
@@ -211,12 +242,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">FBTest</span>
+              <span class="reporter-method-name">FileUploadTest</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">[[ChromeDriver: chrome on XP (3774325d69a0fba6ae88588cbb602608)] -> id: email] loaded properly</span>
+                <span class="reporter-method-output">STEP1</span>
                 <span class="reporter-method-output">STEP2</span>
                 <span class="reporter-method-output">STEP3</span>
-                <span class="reporter-method-output">STEP4</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -234,26 +264,54 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Tests.TestFile</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Tests.FileUpload</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Tests.TestFile</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">loadlog4j</span>
+                <span class="method-start">267 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-                <span class="method-name">start(chrome, https://www.facebook.com)</span>
-                <span class="method-start">822 ms</span>
+                <span class="method-name">start(chrome)</span>
+                <span class="method-start">312 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">FBTest</span>
-                <span class="method-start">15490 ms</span>
+                <span class="method-start">4581 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDownMethod([TestResult name=FBTest status=SUCCESS method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@2ac27...)</span>
-                <span class="method-start">35643 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tearDownMethod([TestResult name=FBTest status=SUCCESS method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@3b014...)</span>
+                <span class="method-start">4601 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Tests.FileUpload</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">loadlog4j</span>
+                <span class="method-start">4981 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">start(chrome)</span>
+                <span class="method-start">4983 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">FileUploadTest</span>
+                <span class="method-start">8434 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDownMethod([TestResult name=FileUploadTest status=SUCCESS method=FileUpload.FileUploadTest()[pri:0, instance:Te...)</span>
+                <span class="method-start">17909 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">37620 ms</span>
+                <span class="method-start">19610 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

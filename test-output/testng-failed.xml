@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="0" verbose="3" name="Failed suite [Test]">
-  <parameter name="url" value="https://www.facebook.com"/>
-  <parameter name="Browser" value="chrome"/>
-  <listeners>
-    <listener class-name="atu.testng.reports.listeners.ATUReportsListener"/>
-    <listener class-name="atu.testng.reports.listeners.ConfigurationListener"/>
-    <listener class-name="atu.testng.reports.listeners.MethodListener"/>
-  </listeners>
-  <test name="FBTEst(failed)">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
       <class name="Tests.TestFile">
         <methods>
           <include name="FBTest"/>
-          <include name="tearDownMethod"/>
           <include name="setup"/>
-          <include name="start"/>
-          <include name="teardown"/>
+          <include name="loadlog4j"/>
         </methods>
       </class> <!-- Tests.TestFile -->
     </classes>
-  </test> <!-- FBTEst(failed) -->
-</suite> <!-- Failed suite [Test] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

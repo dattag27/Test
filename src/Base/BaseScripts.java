@@ -31,6 +31,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import TestData.ExcelReader;
+
 public class BaseScripts {
 	Properties objProperties = new Properties();
 	public ApplicationController connect;
@@ -63,6 +65,7 @@ public class BaseScripts {
 			System.out.println("##Setting ubuntu atu properties path=>"
 					+ this.objProperties.getProperty("ATUPropertiesPathUbuntu"));
 	}
+		
 		this.connect = null;
 	}
 	
@@ -88,6 +91,11 @@ public class BaseScripts {
 		driver.manage().window().maximize();
 		Logger.getLogger(BaseScripts.class).info("Window Maximized");
 		
+	if(browser.contains("No")){
+		
+		Logger.getLogger(BaseScripts.class).info("No Browser opened !!!API testing in progress");
+	}
+		
 	}
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}catch(Exception e)
@@ -97,13 +105,13 @@ public class BaseScripts {
 	}
 	}
 	@BeforeTest
-	public static void loadlog4j()
+	public static void loadlog4j() throws IOException
 	{
 		String log4j=System.getProperty("user.dir")+ "/Config/log4j.properties";
 		PropertyConfigurator.configure(log4j);
 	}
 	
-	@Test(enabled = false)
+	@Test
 	public ApplicationController connect() {
 		if (this.connect == null) {
 			this.connect = new ApplicationController(driver);
@@ -111,10 +119,10 @@ public class BaseScripts {
 			this.connect = new ApplicationController(driver);
 		}
 
-		this.connect.strParametersNValues = this.strDTParametersNValues;
+		/*this.connect.strParametersNValues = this.strDTParametersNValues;
 		if (this.connect.strMainParametersNValues == "") {
 			this.connect.strMainParametersNValues = ParameterNValue;
-		}
+		}*/
 
 		return this.connect;
 	}

@@ -14,20 +14,20 @@
       <![CDATA[STEP4]]>
     </line>
   </reporter-output>
-  <suite name="Test" duration-ms="28441" started-at="2020-06-21T17:48:19Z" finished-at="2020-06-21T17:48:47Z">
+  <suite name="Test" duration-ms="65499" started-at="2020-06-22T16:26:33Z" finished-at="2020-06-22T16:27:38Z">
     <groups>
     </groups>
-    <test name="FBTEst" duration-ms="28441" started-at="2020-06-21T17:48:19Z" finished-at="2020-06-21T17:48:47Z">
+    <test name="FBTEst" duration-ms="65499" started-at="2020-06-22T16:26:33Z" finished-at="2020-06-22T16:27:38Z">
       <class name="Tests.TestFile">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.TestFile@4e04a765]" name="setup" is-config="true" duration-ms="416" started-at="2020-06-21T23:18:19Z" finished-at="2020-06-21T23:18:19Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.TestFile@4e04a765]" name="setup" is-config="true" duration-ms="1352" started-at="2020-06-22T21:56:32Z" finished-at="2020-06-22T21:56:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="loadlog4j()[pri:0, instance:Tests.TestFile@4e04a765]" name="loadlog4j" is-config="true" duration-ms="37" started-at="2020-06-21T23:18:19Z" finished-at="2020-06-21T23:18:19Z">
+        <test-method status="PASS" signature="loadlog4j()[pri:0, instance:Tests.TestFile@4e04a765]" name="loadlog4j" is-config="true" duration-ms="73" started-at="2020-06-22T21:56:33Z" finished-at="2020-06-22T21:56:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadlog4j -->
-        <test-method status="PASS" signature="start(java.lang.String)[pri:0, instance:Tests.TestFile@4e04a765]" name="start" is-config="true" duration-ms="4729" started-at="2020-06-21T23:18:19Z" finished-at="2020-06-21T23:18:24Z">
+        <test-method status="PASS" signature="start(java.lang.String)[pri:0, instance:Tests.TestFile@4e04a765]" name="start" is-config="true" duration-ms="14684" started-at="2020-06-22T21:56:33Z" finished-at="2020-06-22T21:56:48Z">
           <params>
             <param index="0">
               <value>
@@ -38,7 +38,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method status="PASS" signature="FBTest()[pri:0, instance:Tests.TestFile@4e04a765]" name="FBTest" duration-ms="20807" started-at="2020-06-21T23:18:24Z" finished-at="2020-06-21T23:18:45Z">
+        <test-method status="PASS" signature="FBTest()[pri:0, instance:Tests.TestFile@4e04a765]" name="FBTest" duration-ms="44387" started-at="2020-06-22T21:56:48Z" finished-at="2020-06-22T21:57:32Z">
           <reporter-output>
             <line>
               <![CDATA[STEP1]]>
@@ -54,7 +54,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- FBTest -->
-        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.TestFile@4e04a765]" name="tearDownMethod" is-config="true" duration-ms="1924" started-at="2020-06-21T23:18:45Z" finished-at="2020-06-21T23:18:47Z">
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.TestFile@4e04a765]" name="tearDownMethod" is-config="true" duration-ms="2932" started-at="2020-06-22T21:57:32Z" finished-at="2020-06-22T21:57:35Z">
           <params>
             <param index="0">
               <value>
@@ -65,7 +65,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownMethod -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.TestFile@4e04a765]" name="teardown" is-config="true" duration-ms="903" started-at="2020-06-21T23:18:47Z" finished-at="2020-06-21T23:18:47Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.TestFile@4e04a765]" name="teardown" is-config="true" duration-ms="3386" started-at="2020-06-22T21:57:35Z" finished-at="2020-06-22T21:57:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

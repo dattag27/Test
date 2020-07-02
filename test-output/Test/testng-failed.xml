@@ -1,24 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="0" verbose="3" name="Failed suite [Test]">
-  <parameter name="url" value="https://www.facebook.com"/>
   <parameter name="Browser" value="chrome"/>
   <listeners>
     <listener class-name="atu.testng.reports.listeners.ATUReportsListener"/>
     <listener class-name="atu.testng.reports.listeners.ConfigurationListener"/>
     <listener class-name="atu.testng.reports.listeners.MethodListener"/>
   </listeners>
-  <test name="FBTEst(failed)">
+  <test name="KPMG Add Contents(failed)">
     <classes>
-      <class name="Tests.TestFile">
+      <class name="Tests.DeleteContentVerfication">
         <methods>
-          <include name="FBTest"/>
           <include name="tearDownMethod"/>
           <include name="setup"/>
           <include name="start"/>
-          <include name="teardown"/>
+          <include name="loadlog4j"/>
         </methods>
-      </class> <!-- Tests.TestFile -->
+      </class> <!-- Tests.DeleteContentVerfication -->
+      <class name="Tests.EditContentsBasedOnRoles">
+        <methods>
+          <include name="tearDownMethod"/>
+          <include name="start"/>
+          <include name="loadlog4j"/>
+        </methods>
+      </class> <!-- Tests.EditContentsBasedOnRoles -->
+      <class name="Tests.MultipleUsersVerification">
+        <methods>
+          <include name="start"/>
+          <include name="tearDownMethod"/>
+          <include name="start"/>
+          <include name="loadlog4j"/>
+        </methods>
+      </class> <!-- Tests.MultipleUsersVerification -->
     </classes>
-  </test> <!-- FBTEst(failed) -->
+  </test> <!-- KPMG Add Contents(failed) -->
+  <test name="KPMG Edit Contents(failed)">
+    <classes>
+      <class name="Tests.DeleteContentVerfication">
+        <methods>
+          <include name="tearDownMethod"/>
+          <include name="setup"/>
+          <include name="start"/>
+          <include name="loadlog4j"/>
+        </methods>
+      </class> <!-- Tests.DeleteContentVerfication -->
+      <class name="Tests.EditContentsBasedOnRoles">
+        <methods>
+          <include name="start"/>
+          <include name="tearDownMethod"/>
+          <include name="start"/>
+          <include name="loadlog4j"/>
+        </methods>
+      </class> <!-- Tests.EditContentsBasedOnRoles -->
+      <class name="Tests.MultipleUsersVerification">
+        <methods>
+          <include name="tearDownMethod"/>
+          <include name="start"/>
+          <include name="loadlog4j"/>
+        </methods>
+      </class> <!-- Tests.MultipleUsersVerification -->
+    </classes>
+  </test> <!-- KPMG Edit Contents(failed) -->
 </suite> <!-- Failed suite [Test] -->

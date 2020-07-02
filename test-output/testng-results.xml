@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[[[ChromeDriver: chrome on XP (3774325d69a0fba6ae88588cbb602608)] -> id: email] loaded properly]]>
+      <![CDATA[STEP1]]>
     </line>
     <line>
       <![CDATA[STEP2]]>
@@ -10,39 +10,106 @@
     <line>
       <![CDATA[STEP3]]>
     </line>
-    <line>
-      <![CDATA[STEP4]]>
-    </line>
   </reporter-output>
-  <suite name="Test" duration-ms="40980" started-at="2020-06-20T12:27:08Z" finished-at="2020-06-20T12:27:49Z">
+  <suite name="Test" duration-ms="21725" started-at="2020-07-02T18:53:48Z" finished-at="2020-07-02T18:54:10Z">
     <groups>
     </groups>
-    <test name="FBTEst" duration-ms="40980" started-at="2020-06-20T12:27:08Z" finished-at="2020-06-20T12:27:49Z">
+    <test name="FBTEst" duration-ms="4690" started-at="2020-07-02T18:53:48Z" finished-at="2020-07-02T18:53:53Z">
       <class name="Tests.TestFile">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.TestFile@2ac273d3]" name="setup" is-config="true" duration-ms="793" started-at="2020-06-20T17:57:07Z" finished-at="2020-06-20T17:57:08Z">
+        <test-method status="PASS" signature="loadlog4j()[pri:0, instance:Tests.TestFile@3b0143d3]" name="loadlog4j" is-config="true" duration-ms="38" started-at="2020-07-03T00:23:48Z" finished-at="2020-07-03T00:23:48Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="start(java.lang.String, java.lang.String)[pri:0, instance:Tests.TestFile@2ac273d3]" name="start" is-config="true" duration-ms="14664" started-at="2020-06-20T17:57:08Z" finished-at="2020-06-20T17:57:22Z">
+        </test-method> <!-- loadlog4j -->
+        <test-method status="PASS" signature="start(java.lang.String)[pri:0, instance:Tests.TestFile@3b0143d3]" name="start" is-config="true" duration-ms="4267" started-at="2020-07-03T00:23:48Z" finished-at="2020-07-03T00:23:52Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chrome]]>
               </value>
             </param>
-            <param index="1">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="FBTest()[pri:0, instance:Tests.TestFile@3b0143d3]" name="FBTest" duration-ms="18" started-at="2020-07-03T00:23:52Z" finished-at="2020-07-03T00:23:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FBTest -->
+        <test-method status="FAIL" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.TestFile@3b0143d3]" name="tearDownMethod" is-config="true" duration-ms="0" started-at="2020-07-03T00:23:52Z" finished-at="2020-07-03T00:23:52Z">
+          <params>
+            <param index="0">
               <value>
-                <![CDATA[https://www.facebook.com]]>
+                <![CDATA[[TestResult name=FBTest status=SUCCESS method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@3b0143d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at Base.BaseScripts.tearDownMethod(BaseScripts.java:137)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method status="SKIP" signature="teardown()[pri:0, instance:Tests.TestFile@3b0143d3]" name="teardown" is-config="true" duration-ms="0" started-at="2020-07-03T00:23:53Z" finished-at="2020-07-03T00:23:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Tests.TestFile -->
+    </test> <!-- FBTEst -->
+    <test name="AutoIT" duration-ms="17009" started-at="2020-07-02T18:53:53Z" finished-at="2020-07-02T18:54:10Z">
+      <class name="Tests.FileUpload">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.FileUpload@cd2dae5]" name="setup" is-config="true" duration-ms="264" started-at="2020-07-03T00:23:48Z" finished-at="2020-07-03T00:23:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="loadlog4j()[pri:0, instance:Tests.FileUpload@cd2dae5]" name="loadlog4j" is-config="true" duration-ms="2" started-at="2020-07-03T00:23:53Z" finished-at="2020-07-03T00:23:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadlog4j -->
+        <test-method status="PASS" signature="start(java.lang.String)[pri:0, instance:Tests.FileUpload@cd2dae5]" name="start" is-config="true" duration-ms="3451" started-at="2020-07-03T00:23:53Z" finished-at="2020-07-03T00:23:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method status="PASS" signature="FBTest()[pri:0, instance:Tests.TestFile@2ac273d3]" name="FBTest" duration-ms="20151" started-at="2020-06-20T17:57:22Z" finished-at="2020-06-20T17:57:42Z">
+        <test-method status="PASS" signature="FileUploadTest()[pri:0, instance:Tests.FileUpload@cd2dae5]" name="FileUploadTest" duration-ms="9473" started-at="2020-07-03T00:23:56Z" finished-at="2020-07-03T00:24:06Z">
           <reporter-output>
             <line>
-              <![CDATA[[[ChromeDriver: chrome on XP (3774325d69a0fba6ae88588cbb602608)] -> id: email] loaded properly]]>
+              <![CDATA[STEP1]]>
             </line>
             <line>
               <![CDATA[STEP2]]>
@@ -50,27 +117,24 @@
             <line>
               <![CDATA[STEP3]]>
             </line>
-            <line>
-              <![CDATA[STEP4]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- FBTest -->
-        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.TestFile@2ac273d3]" name="tearDownMethod" is-config="true" duration-ms="1976" started-at="2020-06-20T17:57:42Z" finished-at="2020-06-20T17:57:44Z">
+        </test-method> <!-- FileUploadTest -->
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.FileUpload@cd2dae5]" name="tearDownMethod" is-config="true" duration-ms="1701" started-at="2020-07-03T00:24:06Z" finished-at="2020-07-03T00:24:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=FBTest status=SUCCESS method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@2ac273d3] output=[[ChromeDriver: chrome on XP (3774325d69a0fba6ae88588cbb602608)] -> id: email] loaded properly]]]>
+                <![CDATA[[TestResult name=FileUploadTest status=SUCCESS method=FileUpload.FileUploadTest()[pri:0, instance:Tests.FileUpload@cd2dae5] output=STEP1]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownMethod -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.TestFile@2ac273d3]" name="teardown" is-config="true" duration-ms="4151" started-at="2020-06-20T17:57:44Z" finished-at="2020-06-20T17:57:49Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.FileUpload@cd2dae5]" name="teardown" is-config="true" duration-ms="2379" started-at="2020-07-03T00:24:07Z" finished-at="2020-07-03T00:24:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- Tests.TestFile -->
-    </test> <!-- FBTEst -->
+      </class> <!-- Tests.FileUpload -->
+    </test> <!-- AutoIT -->
   </suite> <!-- Test -->
 </testng-results>

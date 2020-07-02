@@ -1,5 +1,6 @@
 package Tests;
 
+import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 import Base.BaseScripts;
@@ -13,6 +14,8 @@ public class TestFile extends BaseScripts {
 	@Test
 	public void FBTest() throws Exception
 	{
+		
+
 		try {
 			ATUReports.indexPageDescription = "FB Testing Demo";
 			ATUReports.setAuthorInfo("Gaurav D", Utils.getCurrentTime(), "1.0");
@@ -21,12 +24,12 @@ public class TestFile extends BaseScripts {
 		 
 			logger=report.createTest("FB Test");
 			
-			logger.info("Test Started");
+			Logger.getLogger("Test Started");
 			
-			connect().homePage().launch();
-			connect().homePage().enterUserName();
-			connect().homePage().enterPassword();
-			connect().homePage().signIn();
+			connect().HomePage().launch();
+			connect().HomePage().enterUserName();
+			connect().HomePage().enterPassword();
+			connect().HomePage().signIn();
 			 
 		}catch(Exception e)
 		{
