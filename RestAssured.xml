@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test" verbose="3" parallel="false" thread-count="0">
+
+	<parameter name="Browser" value="chrome" />
+
+
+	<test name="Rest Assured Post Data With JSON File" preserveorder="true">
+		<classes>
+			<class name="RestAssured.PostRequestWithJsonFile" />
+		</classes>
+	</test>
+
+	<test name="Rest Assured GET Request After Post" preserveorder="true">
+		<classes>
+			<class name="RestAssured.SimpleGetRequest" />
+		</classes>
+	</test>
+
+	<test name="Rest Assured Put Data From Json File" preserveorder="true">
+		<classes>
+			<class name="RestAssured.JSONRequestPutWithJsonFile" />
+		</classes>
+	</test>
+
+	<test name="Rest Assured Get Request After Put" preserveorder="true">
+		<classes>
+			<class name="RestAssured.SimpleGetRequest" />
+		</classes>
+	</test>
+
+	<test name="Rest Assured Post Request With Request Params"
+		preserveorder="true">
+		<classes>
+			<class name="RestAssured.PostRequestWithRequestParams" />
+		</classes>
+	</test>
+
+	<test name="Rest Assured Get Request After Post with Request Params"
+		preserveorder="true">
+		<classes>
+			<class name="RestAssured.SimpleGetRequest" />
+		</classes>
+	</test>
+
+	<test name="Rest Assured Delete Data From Server" preserveorder="true">
+		<classes>
+			<class name="RestAssured.DeleteRequest" />
+		</classes>
+	</test>
+
+
+	<listeners>
+		<listener class-name="atu.testng.reports.listeners.ATUReportsListener"></listener>
+		<listener class-name="atu.testng.reports.listeners.ConfigurationListener"></listener>
+		<listener class-name="atu.testng.reports.listeners.MethodListener"></listener>
+	</listeners>
+</suite>
+	

@@ -31,8 +31,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import TestData.ExcelReader;
-
 public class BaseScripts {
 	Properties objProperties = new Properties();
 	public ApplicationController connect;
