@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
     <line>
-      <![CDATA[[[ChromeDriver: chrome on XP (3774325d69a0fba6ae88588cbb602608)] -> id: email] loaded properly]]>
+      <![CDATA[UserName loaded properly]]>
     </line>
     <line>
       <![CDATA[STEP2]]>
@@ -13,17 +13,29 @@
     <line>
       <![CDATA[STEP4]]>
     </line>
+    <line>
+      <![CDATA[UserName loaded properly]]>
+    </line>
+    <line>
+      <![CDATA[STEP6]]>
+    </line>
+    <line>
+      <![CDATA[STEP7]]>
+    </line>
+    <line>
+      <![CDATA[STEP8]]>
+    </line>
   </reporter-output>
-  <suite name="Test" duration-ms="40980" started-at="2020-06-20T12:27:08Z" finished-at="2020-06-20T12:27:49Z">
+  <suite name="Test" duration-ms="85415" started-at="2021-05-11T17:06:12Z" finished-at="2021-05-11T17:07:38Z">
     <groups>
     </groups>
-    <test name="FBTEst" duration-ms="40980" started-at="2020-06-20T12:27:08Z" finished-at="2020-06-20T12:27:49Z">
+    <test name="FBTEst" duration-ms="85415" started-at="2021-05-11T17:06:12Z" finished-at="2021-05-11T17:07:38Z">
       <class name="Tests.TestFile">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.TestFile@2ac273d3]" name="setup" is-config="true" duration-ms="793" started-at="2020-06-20T17:57:07Z" finished-at="2020-06-20T17:57:08Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.TestFile@bd8db5a]" name="setup" is-config="true" duration-ms="706" started-at="2021-05-11T22:36:12Z" finished-at="2021-05-11T22:36:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="start(java.lang.String, java.lang.String)[pri:0, instance:Tests.TestFile@2ac273d3]" name="start" is-config="true" duration-ms="14664" started-at="2020-06-20T17:57:08Z" finished-at="2020-06-20T17:57:22Z">
+        <test-method status="PASS" signature="start(java.lang.String, java.lang.String)[pri:0, instance:Tests.TestFile@bd8db5a]" name="start" is-config="true" duration-ms="7535" started-at="2021-05-11T22:36:12Z" finished-at="2021-05-11T22:36:20Z">
           <params>
             <param index="0">
               <value>
@@ -39,10 +51,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method status="PASS" signature="FBTest()[pri:0, instance:Tests.TestFile@2ac273d3]" name="FBTest" duration-ms="20151" started-at="2020-06-20T17:57:22Z" finished-at="2020-06-20T17:57:42Z">
+        <test-method status="FAIL" signature="FBTest()[pri:0, instance:Tests.TestFile@bd8db5a]" name="FBTest" duration-ms="38645" started-at="2021-05-11T22:36:20Z" finished-at="2021-05-11T22:36:59Z">
+          <exception class="atu.testng.reports.exceptions.ATUReporterStepFailedException">
+            <full-stacktrace>
+              <![CDATA[[ATU Custom Reporter Step Failed Exception]
+	at atu.testng.reports.listeners.ATUReportsListener.onTestSuccess(Unknown Source)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1659)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1639)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- atu.testng.reports.exceptions.ATUReporterStepFailedException -->
           <reporter-output>
             <line>
-              <![CDATA[[[ChromeDriver: chrome on XP (3774325d69a0fba6ae88588cbb602608)] -> id: email] loaded properly]]>
+              <![CDATA[UserName loaded properly]]>
             </line>
             <line>
               <![CDATA[STEP2]]>
@@ -55,22 +96,104 @@
             </line>
           </reporter-output>
         </test-method> <!-- FBTest -->
-        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.TestFile@2ac273d3]" name="tearDownMethod" is-config="true" duration-ms="1976" started-at="2020-06-20T17:57:42Z" finished-at="2020-06-20T17:57:44Z">
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.TestFile@bd8db5a]" name="tearDownMethod" is-config="true" duration-ms="202" started-at="2021-05-11T22:36:59Z" finished-at="2021-05-11T22:36:59Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=FBTest status=SUCCESS method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@2ac273d3] output=[[ChromeDriver: chrome on XP (3774325d69a0fba6ae88588cbb602608)] -> id: email] loaded properly]]]>
+                <![CDATA[[TestResult name=FBTest status=FAILURE method=TestFile.FBTest()[pri:0, instance:Tests.TestFile@bd8db5a] output=UserName loaded properly]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownMethod -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.TestFile@2ac273d3]" name="teardown" is-config="true" duration-ms="4151" started-at="2020-06-20T17:57:44Z" finished-at="2020-06-20T17:57:49Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.TestFile@bd8db5a]" name="teardown" is-config="true" duration-ms="858" started-at="2021-05-11T22:36:59Z" finished-at="2021-05-11T22:37:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="flush()[pri:0, instance:Tests.TestFile@bd8db5a]" name="flush" is-config="true" duration-ms="1237" started-at="2021-05-11T22:37:38Z" finished-at="2021-05-11T22:37:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flush -->
       </class> <!-- Tests.TestFile -->
+      <class name="Tests.TestFile2">
+        <test-method status="PASS" signature="start(java.lang.String, java.lang.String)[pri:0, instance:Tests.TestFile2@2f943d71]" name="start" is-config="true" duration-ms="4775" started-at="2021-05-11T22:37:00Z" finished-at="2021-05-11T22:37:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.facebook.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="FAIL" signature="FBTest()[pri:0, instance:Tests.TestFile2@2f943d71]" name="FBTest" duration-ms="32377" started-at="2021-05-11T22:37:04Z" finished-at="2021-05-11T22:37:37Z">
+          <exception class="atu.testng.reports.exceptions.ATUReporterStepFailedException">
+            <full-stacktrace>
+              <![CDATA[[ATU Custom Reporter Step Failed Exception]
+	at atu.testng.reports.listeners.ATUReportsListener.onTestSuccess(Unknown Source)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1659)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1639)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- atu.testng.reports.exceptions.ATUReporterStepFailedException -->
+          <reporter-output>
+            <line>
+              <![CDATA[UserName loaded properly]]>
+            </line>
+            <line>
+              <![CDATA[STEP6]]>
+            </line>
+            <line>
+              <![CDATA[STEP7]]>
+            </line>
+            <line>
+              <![CDATA[STEP8]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- FBTest -->
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:Tests.TestFile2@2f943d71]" name="tearDownMethod" is-config="true" duration-ms="164" started-at="2021-05-11T22:37:37Z" finished-at="2021-05-11T22:37:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=FBTest status=FAILURE method=TestFile2.FBTest()[pri:0, instance:Tests.TestFile2@2f943d71] output=UserName loaded properly]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:Tests.TestFile2@2f943d71]" name="teardown" is-config="true" duration-ms="813" started-at="2021-05-11T22:37:37Z" finished-at="2021-05-11T22:37:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Tests.TestFile2 -->
     </test> <!-- FBTEst -->
   </suite> <!-- Test -->
 </testng-results>

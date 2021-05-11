@@ -120,6 +120,7 @@ public Boolean typeValue(WebElement objWebElement, String strObjectName, String 
 	try {
 		objWebElement.sendKeys(new CharSequence[]{strInputValue});
 		String strObjectXPATH = "";
+		BaseScripts.log.info("Value " + strInputValue + " typed in element " + strObjectName);
 		ATUReports.add("Value " + strInputValue + " typed in element " + strObjectName, LogAs.PASSED,new CaptureScreen(ScreenshotOf.BROWSER_PAGE));
 		BaseScripts.logTestPass(strInputValue,strObjectName);
 		captureScreenshotOfElement(objWebElement, strObjectName, "Demo");
@@ -127,6 +128,7 @@ public Boolean typeValue(WebElement objWebElement, String strObjectName, String 
 	}catch(Exception e)
 	{
 		this.strErrorMsg = e.toString();
+		BaseScripts.log.info("Unable to type Value " + strInputValue + " in element " + strObjectName);
 		ATUReports.add("Unable to type Value " + strInputValue + " in element " + strObjectName, "true","false", LogAs.FAILED, new CaptureScreen(ScreenshotOf.BROWSER_PAGE));
 		BaseScripts.logTestFail(strInputValue,strObjectName);
 		return false;
@@ -139,11 +141,13 @@ public Boolean clickObject(WebElement objWebElement, String strObjectName) throw
 	try {
 		objWebElement.click();
 		String strObjectXPATH = "";
+		BaseScripts.log.info("Element " + strObjectName + "</i> clicked");
 		ATUReports.add("Element " + strObjectName + "</i> clicked",LogAs.PASSED,new CaptureScreen(ScreenshotOf.DESKTOP));
 		BaseScripts.logTestPass(strObjectName );
 		return true;
 	} catch (Exception e) {
 		this.strErrorMsg = e.toString();
+		BaseScripts.log.info(strObjectName + " couldn't be clicked. <br> Error message=>" + this.strErrorMsg);
 		ATUReports.add(
 				strObjectName + " couldn't be clicked. <br> Error message=>" + this.strErrorMsg,LogAs.FAILED,new CaptureScreen(ScreenshotOf.BROWSER_PAGE));
 		BaseScripts.logTestFail(strObjectName + "not clicked");
@@ -155,11 +159,13 @@ public Boolean waitTillElementEnabled(WebElement objWebElement, String strObject
 	try {
 		(new WebDriverWait(this.driver, (long) intWaitTime))
 				.until(ExpectedConditions.elementToBeClickable(objWebElement));
-		Reporter.log(objWebElement+ " loaded properly");
+		Reporter.log(strObjectName+ " loaded properly");
+		BaseScripts.log.info(strObjectName+ " loaded properly");
 		BaseScripts.logTestPass(strObjectName+ " Loaded properly");
 		return true;
 	} catch (Exception var5) {
 		this.strErrorMsg = var5.toString();
+		BaseScripts.log.error(strObjectName+ " not loaded properly",var5);
 		Reporter.log(objWebElement+ "not loaded properly");
 		BaseScripts.logTestFail(strObjectName+ "Not Loaded properly");
 		return false;

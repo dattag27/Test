@@ -15,10 +15,19 @@
           <include name="FBTest"/>
           <include name="tearDownMethod"/>
           <include name="setup"/>
+          <include name="flush"/>
           <include name="start"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- Tests.TestFile -->
+      <class name="Tests.TestFile2">
+        <methods>
+          <include name="tearDownMethod"/>
+          <include name="FBTest"/>
+          <include name="start"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- Tests.TestFile2 -->
     </classes>
   </test> <!-- FBTEst(failed) -->
 </suite> <!-- Failed suite [Test] -->

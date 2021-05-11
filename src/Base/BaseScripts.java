@@ -9,6 +9,8 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +19,7 @@ import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
@@ -25,7 +28,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class BaseScripts {
 	Properties objProperties = new Properties();
@@ -33,8 +36,11 @@ public class BaseScripts {
 	public static WebDriver driver = null;
 	public static String ParameterNValue = null;
 	public String strDTParametersNValues;
-	public ExtentReports report;
+	public static ExtentReports report;
+	public static ExtentSparkReporter reporter;
 	public static ExtentTest logger;
+	public static final Logger log=Logger.getLogger(BaseScripts.class);
+	
 	
 	
 	public BaseScripts() {
@@ -44,6 +50,7 @@ public class BaseScripts {
 		} catch (Exception var2) {
 			var2.printStackTrace();
 		}
+		BasicConfigurator.configure();
 		System.out.println("##OS NAME=>" + System.getProperty("os.name"));
 		if (System.getProperty("os.name").toLowerCase().contains("windows")) {
 			System.setProperty("atu.reporter.config", this.objProperties.getProperty("ATUPropertiesPath"));
@@ -65,8 +72,9 @@ public class BaseScripts {
 	@BeforeSuite
 	public void setup()
 	{
-		ExtentHtmlReporter reporter=new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/Reports/Automation"+getCurrentDateTime()+".html"));
 		report=new ExtentReports();
+		reporter=new ExtentSparkReporter(new File(System.getProperty("user.dir")+"/Reports/Automation"+getCurrentDateTime()+".html"));
+		
 		report.attachReporter(reporter);
 	}
 	
@@ -81,6 +89,7 @@ public class BaseScripts {
 		
 	}
 	driver.get(url);
+	log.info(url+ " is opened in Browser" +browser);
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
@@ -110,6 +119,11 @@ public class BaseScripts {
 			{
 				logger.pass("Test Passed", MediaEntityBuilder.createScreenCaptureFromPath(CaptureScreenshot(driver)).build());
 			}
+		
+	}
+	@AfterSuite
+	public void flush()
+	{
 		report.flush();
 	}
 	
@@ -117,6 +131,7 @@ public class BaseScripts {
 	public void teardown()
 	{
 		driver.quit();
+		
 	}
 	
 	public static String getCurrentDateTime()

@@ -5,6 +5,7 @@
 	<test name="FBTEst" preserveorder="true">
 		<classes>
 			<class name="Tests.TestFile"/>
+			<class name="Tests.TestFile2"/>
 		</classes>
 	</test>
 	
